@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="formhw.css">
+    <link rel="stylesheet" href="../normalize.css   ">
 </head>
 <body>
     <form action="formhw.html" method="GET" id="form1">
@@ -13,19 +14,24 @@
             Try it free for 7
             <span class="regular">starting at $333 a month</span>
         </p>
+        <div class="clearfix">
+            <div class="column">
+                <label for="">First name</label>
+                <input type="text" id="firstname" name="user_fname">
+            </div>
 
-        <label for="">First name</label>
-        <input type="text" id="Firstname" name="user_fname">
-
-        <label for="">Last name</label>
-        <input type="text" id="lastname" name="user_lname">
+            <div class="column">
+                <label for="">Last name</label>
+                <input type="text" id="lastname" name="user_lname">
+            </div>
+        </div>
 
         <label for="email" class="block">Email</label>
         <input type="email" id="email" class="block" name="user_email">
 
         <input type="checkbox" name="service" value="condition"/>I want to heart from You about serivces
 
-        <input type="submit" name="submit" id="submit" value="Clam Free Trial" /> 
+        <input type="submit" name="submit" id="submit" class="block sub-button"  value="Clam Free Trial" /> 
 
 
         

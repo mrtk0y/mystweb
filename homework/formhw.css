@@ -25,10 +25,43 @@
     margin: 1em auto;
     padding: 2em 2em;
     border: solid 3px black;
+    background: lightslategray;
 }
 
 .block {
     display: block;
 }
 
-input
+.column {
+    float: left;
+    width: 50%;
+}
+
+#email, #firstname, #lastname {
+    background-color:lightgray;
+    height: 3em;
+}
+
+#firstname, #lastname {
+    width: 50%;
+}
+
+#email {
+    width: 100%;
+}
+
+.sub-button {
+    width: 100%;
+    height: 3em;
+    background: lightsalmon;
+    padding: 0;
+    margin: 1em auto;
+    border: none;
+}
+
+/* clearfix */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
