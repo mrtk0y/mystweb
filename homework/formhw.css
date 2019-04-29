@@ -35,6 +35,7 @@
 .column {
     float: left;
     width: 50%;
+    margin-left: auto;
 }
 
 #email, #firstname, #lastname {
@@ -43,8 +44,9 @@
 }
 
 #firstname, #lastname {
-    width: 50%;
+    width: 95%;
 }
+
 
 #email {
     width: 100%;
