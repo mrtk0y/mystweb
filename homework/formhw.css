@@ -1,69 +1,67 @@
-* {
-    box-sizing: border-box;
-}
-/* Common */
-.bold {
-   font-weight: bold;
-}
-
-.regular {
-    font-weight: normal !important;
-    color: black;
-}
-
-.text-color-red {
-    color: red !important;
-}
-
-.center {
-    text-align: center;
-}
-
-/* layout */
+/* Layout */
 #form1 {
     width: 60%;
     margin: 1em auto;
-    padding: 2em 2em;
-    border: solid 3px black;
-    background: lightslategray;
+    padding: 2em;
+    background: whitesmoke;
 }
 
-.block {
-    display: block;
+#form-heading {
+    color: red;
+    text-align: center;
 }
 
-.column {
+#form-heading span {
+    color: black;
+}
+
+#column1 {
     float: left;
     width: 50%;
-    margin-left: auto;
+}
+
+#column2 {
+    float: right;
+    width: 50%;
 }
 
 #email, #firstname, #lastname {
     background-color:lightgray;
     height: 3em;
+    border: none;
 }
 
 #firstname, #lastname {
-    width: 95%;
+    width: 100%;
 }
-
 
 #email {
     width: 100%;
 }
 
-.sub-button {
-    width: 100%;
-    height: 3em;
-    background: lightsalmon;
-    padding: 0;
-    margin: 1em auto;
-    border: none;
+#condition {
+    display: inline;
 }
 
-/* clearfix */
+/* Clearfix */
 .clearfix::after {
     content: "";
     display: table;
     clear: both;
+}
+
+/* Common */
+* {
+    box-sizing: border-box;
+}
+
+input {
+    display: block;
+}
+
+button {
+    width: 100%;
+    height: 3em;
+    background: rgb(248, 188, 164);
+    border: none;
 }
