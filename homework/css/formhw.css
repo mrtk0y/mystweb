@@ -1,7 +1,6 @@
 /* Layout */
-
 #form1 {
-    width: 70%;
+    width: 60%;
     margin: 1em auto;
     padding: 2em;
     background: whitesmoke;
@@ -11,8 +10,25 @@
     color: red;
     text-align: center;
 }
+
 #form-heading span {
     color: black;
+}
+
+#column1 {
+    float: left;
+    width: 50%;
+}
+
+#column2 {
+    float: right;
+    width: 50%;
+}
+
+#email, #firstname, #lastname {
+    background-color:lightgray;
+    height: 3em;
+    border: none;
 }
 
 #firstname, #lastname {
@@ -48,16 +64,4 @@ button {
     height: 3em;
     background: rgb(248, 188, 164);
     border: none;
-}
-@media screen and (min-width: 769px) {
-    #column1 {
-        float: left;
-        width: 50%;
-        padding-right: 1px;
-    }
-    #column2 {
-        float: right;
-        width: 50%;
-        padding-left: 1px;
-    }
 }
