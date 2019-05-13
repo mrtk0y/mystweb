@@ -15,39 +15,17 @@
     color: black;
 }
 
-#column1 {
-    float: left;
-    width: 50%;
-}
-
-#column2 {
-    float: right;
-    width: 50%;
-}
-
 #email, #firstname, #lastname {
     background-color:lightgray;
     height: 3em;
     border: none;
-}
-
-#firstname, #lastname {
     width: 100%;
-}
-
-#email {
-    width: 100%;
+    margin-bottom: 10px; 
 }
 
 #condition {
     display: inline;
-}
-
-/* Clearfix */
-.clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
+    margin-bottom: 10px;
 }
 
 /* Common */
@@ -55,13 +33,28 @@
     box-sizing: border-box;
 }
 
-input {
-    display: block;
-}
-
 button {
     width: 100%;
     height: 3em;
-    background: rgb(248, 188, 164);
+    background: #686bab;
+    color: white;
     border: none;
+}
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (min-width: 789px) {
+    #column1 {
+        float: left;
+        width: 50%;
+        padding-right: 5px;
+    }
+    
+    #column2 {
+        float: right;
+        width: 50%;
+    }
 }
