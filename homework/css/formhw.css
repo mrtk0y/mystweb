@@ -1,7 +1,6 @@
 /* Layout */
-
 #form1 {
-    width: 70%;
+    width: 60%;
     margin: 1em auto;
     padding: 2em;
     background: whitesmoke;
@@ -11,6 +10,7 @@
     color: red;
     text-align: center;
 }
+
 #form-heading span {
     color: black;
 }
@@ -29,19 +29,18 @@ input[type=checkbox] {
     padding-left: 1px;
 }
 
-#firstname, #lastname {
+#email, #firstname, #lastname {
+    background-color:lightgray;
+    height: 3em;
+    border: none;
     width: 100%;
+    margin-bottom: 10px; 
 }
 
-#email {
-    width: 100%;
-}
-
-/* Clearfix */
-.clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
+#condition {
+    display: inline;
+    margin-bottom: 10px;
+ 
 }
 
 /* Common */
@@ -49,14 +48,28 @@ input[type=checkbox] {
     box-sizing: border-box;
 }
 
-input {
-    display: block;
-}
-
 button {
     width: 100%;
     height: 3em;
-    background: #387bab ;
+    background: #686bab;
+    color: white; 
     border: none;
 }
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (min-width: 720px){
+    #column1 {
+        float: left;
+        width: 50%;
+        padding-right: 5px;
+    }
     
+    #column2 {
+        float: right;
+        width: 50%;
+    }
+}
