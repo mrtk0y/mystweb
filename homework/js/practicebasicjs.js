@@ -13,7 +13,8 @@ alert(lastname);
 var fullname = firstname.toUpperCase() + ' ' + lastname.toUpperCase();
 alert(fullname);
 
-var message = 'Hello' + fullname;
+var message = 'Hello ' + fullname;
 document.write(message);
 
-document.write("The string " + fullname + " is " + fullname.length + " number of characters long");
+alert("The string " + fullname + " is " + fullname.length + " number of characters long");
+
