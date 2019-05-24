@@ -30,17 +30,12 @@ var number1 = prompt("Number 1 = ");
 number1 = parseFloat(number1);
 var number2 = prompt("Number 2 = ");
 number2 = parseFloat(number2);
-var message1 = "Math with the numbers " + number1 + " and " + number2;
-document.write(message1);
+var message = "<h1>Math with the numbers " + number1 + " and " + number2 + "</h1>";
 
-var plus = number1 + number2;
-document.write(number1 + " + " + number2 " = " + plus);
+message += number1 + " + " + number2 + " = " + (number1 + number2);
+message += "<br>";
+// var subtract = number1 - number2;
+// var multiply = number1 * number2;
+// var divi = number1 / number2;
 
-var subtract = number1 - number2 ;
-// document.write(number1 + " - " + number2 " = " + subtract);
-
-var multiply = number1 * number2;
-// document.write(number1 + " * " + number2 " = " + multiply);
-
-var divi = number1 / number2;
-// document.write(number1 + " / " + number2 " = " + divi);
+document.write(message);
