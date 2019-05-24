@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
 
 
+.carousel-item img {
+  width: 100%;
+  height: 100vh;
+}
 /*---Media Queries --*/
 @media (min-width: 992px) {
-.carousel-inner > .carousel-item > img {
-  width: 100%;
-  height:600px;
-}
+
 }
 @media (min-width: 768px) {
   
