@@ -19,25 +19,31 @@
 alert("Let's do some math!");
 
 // collect numeric input
-var num1 = prompt("Please type a number");
+var num1 = prompt("Number 1 : ");
 num1 = parseFloat(num1);
-var num2 = prompt("Please type another number");
+var num2 = prompt("Number 2 : ");
 num2 = parseFloat(num2);
-
 // build an HTML message
 
-// write message to web page
-if (numb2!=0 ) {
-    var message = "<h1>Math with the numbers " + num1 + " and " + num2 + "</h1>";
-message += num1 + " + " + num2 + " = " + (num1 + num2);
-message += "<br>";
-message += num1 + " * " + num2 + " = " + (num1 * num2);
-message += "<br>";
-message += num1 + " / " + num2 + " = " + (num1 / num2);
-message += "<br>";
-message += num1 + " - " + num2 + " = " + (num1 - num2);
-  
-    document.write(message);
-} else {
-    alert("Insert different number 2");
+if (isNaN(numb1)&& isNaN(numb2)) {
+   return 'Retype Number Only'
+} else if (numb2==0) {
+    return "Insert different number 2";
 }
+else {
+    var message = "<h1>Math with the numbers " + num1 + " and " + num2 + "</h1>";
+    message += num1 + " + " + num2 + " = " + (num1 + num2);
+    message += "<br>";
+    message += num1 + " * " + num2 + " = " + (num1 * num2);
+    message += "<br>";
+    message += num1 + " / " + num2 + " = " + (num1 / num2);
+    message += "<br>";
+    message += num1 + " - " + num2 + " = " + (num1 - num2);
+    document.write(message);
+
+}
+
+// write message to web page
+
+  
+
