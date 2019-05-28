@@ -11,19 +11,18 @@ you can do that by typing ctrl + C.
 
 * * */
 
-let i=0;
-let text;
+var i = 0;
+var text = '';
 
 // 1. Write a while loop to build a string of numbers from 0 to 4, 
 //    separated by spaces, and store the string in the variable `text`.
 print('1st Loop:');
-text = '';
 
 // Write 1st loop here:
 do {
-  text += i + " ";
-  i+=1;
-} while(i < 5)
+  text += i + ' ';
+  i += 1;
+} while (i < 5)
 
 print(text); // Should print `0 1 2 3 4 `.
 
@@ -33,24 +32,25 @@ print('2nd Loop:');
 text = '';
 
 // Write 2nd loop here:
+i = 1;
 do {
-  i+=1;
-  text += i + " "; 
-} while(i <= 5)
+  text += i + ' ';
+  i += 1;
+} while (i < 6)
 
 print(text); // Should print `1 2 3 4 5 `.
 
 // 3. Write a while loop to build a string of numbers from 5 to 1, 
 //    separated by spaces, and store the string in the variable `text`.
-// print('3rd Loop:');
-// text = '';
-// var rev;
-// // Write 3rd loop here:
-// do {
-//   i+=1;
-//   rev += i + " ";
-//   text = rev.reverse();
-// } while(i <= 5)
+print('3rd Loop:');
+text = '';
+i = 5;
+
+// Write 3rd loop here:
+do {
+  text += i + ' ';
+  i -= 1;
+} while(i > 0)
 
 print(text); // Should print `5 4 3 2 1 `.
 
