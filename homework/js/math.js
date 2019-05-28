@@ -25,7 +25,6 @@
 //     to the web page. Open the finished.png file in this workspace
 //     to see what the completed output should look like
 
-alert("Let's do some Math");
 var number1 = prompt("Number 1 = ");
 number1 = parseFloat(number1);
 var number2 = prompt("Number 2 = ");
