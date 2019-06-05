@@ -8,6 +8,6 @@
 }
 
 .backgroundimg {
-    height: 70vh;
-    background: url("https://static.teamtreehouse.com/assets/views/marketing/home/homepage-hero-6b54d9398fb6767e848cfcb92bce53b465c49d29a5c990e11483e42c797c121d.png") no-repeat center center;
+    height: 100vh;
+    background: url("../picture/background1.png") no-repeat center center;
 }
