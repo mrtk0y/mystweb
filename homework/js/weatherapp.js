@@ -1,4 +1,3 @@
-
 // Function to get the Temperature of City module
 const weather = require('./weather.js')
 
