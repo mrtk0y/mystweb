@@ -1,4 +1,4 @@
-`const https = require('https');
+const https = require('https');
 const http = require('http');
 function printMessage(city, temp) {
     const message = `The temp of ${city} is ${temp} F`;
@@ -40,4 +40,4 @@ function getTemp (city) {
     }
 }
 
-module.exports.getTemp = getTemp;`
+module.exports.getTemp = getTemp;
