@@ -1,13 +1,18 @@
 const https = require('https');
 const http = require('http');
 function printMessage(city, temp) {
-    const message = `The temp of ${city} is ${temp} F`;
+    const message = `Nhiệt độ nước ${city} là ${temp} độ C`;
     console.log(message);
 }
 
 function printError (error) {
     console.error(error.message);
 }
+
+function getCelsius (kelvin){
+    const celsius = kelvin - 273.15;
+    return Math.round(celsius);
+  }
 
 function getTemp (city) {
     try{
@@ -23,7 +28,8 @@ function getTemp (city) {
                 //Parse data
                 response.on('end', () => {
                     try {
-                        printMessage(city, JSON.parse(body).main.temp);
+                        const weather = JSON.parse(body);
+                        printMessage(city, getCelsius(weather.main.temp));
                     } catch (error) {
                         printError(error);
                     }
