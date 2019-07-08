@@ -12,7 +12,7 @@ function Profile(username) {
 
     EventEmitter.call(this); // Call function Profile at EventEmitter
 
-    profileEmitter = this; //Sign Profile to profileEmitter
+    profileEmitter = this; //Sign Profile to profileEmitter ; Emitter is
 
     //Connect to the API URL (https://teamtreehouse.com/username.json)
     var request = https.get("https://teamtreehouse.com/" + username + ".json", function(response) {
