@@ -1,0 +1,20 @@
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge,chrome=1')
+    title The Weather App
+    meta(name='viewport' content='width=device-width,initial-scale=1')
+    link(rel='stylesheet' href='style.css' type='text/css')
+    link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+  body
+    div
+      img#magnifying(src='https://imageog.flaticon.com/icons/png/512/49/49116.png' alt='magnifying')
+      form
+        .form-group.text-center
+          ul
+            li
+              label(for='formGroupExampleInput2') Nhiệt độ thời tiết Đất nước bạn muốn tìm là?
+            li
+              input.form-control#formGroupExampleInput2(type='text' placeholder='Tên thành phố')
+            li
+              a(href='/') Tìm kiếm
