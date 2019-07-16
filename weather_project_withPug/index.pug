@@ -1,0 +1,21 @@
+
+  html2pug converts HTML to Pug.
+
+  usage:
+    html2pug [options] < [file]
+
+  options:
+    -f, --fragment       Don't wrap in enclosing <html> tag
+    -t, --tabs           Use tabs for indentation
+    -c, --commas         Use commas to separate attributes
+    -d, --double-quotes  Use double quotes for attribute values
+    -h, --help           Show this page
+    -v, --version        Show version
+
+  examples:
+    # write to stdout
+    html2pug < example.html
+
+    # write to file
+    html2pug < example.html > example.pug
+
