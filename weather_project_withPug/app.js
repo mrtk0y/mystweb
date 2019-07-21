@@ -11,7 +11,8 @@ app.get('/', (request, response) => {
 });
 
 app.get('/example', (request, response) => {
-  
+  response.send("Helllo");
+  response.end();
 });
 
 app.listen(3000, ()=> {
