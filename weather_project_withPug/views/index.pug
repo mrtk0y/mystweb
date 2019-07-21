@@ -1,14 +1,29 @@
 extends layout.pug
 block content  
   section#content
-    div
+    div.d-flex 
+      div.col-6 
+        a.active(href='#') Home
+      div
+        form(action="/")
+          ul.d-flex
+            li  
+              input(type="text" placeholder="Username" name="username")
+            li
+              input(type="text" placeholder="Password" name="psw")
+            li
+              button(type="submit") Login
+  
+    div#formSearch
       img#magnifying(src='https://imageog.flaticon.com/icons/png/512/49/49116.png' alt='magnifying')
-      form
-        .form-group.text-center
+      form.form-group.text-center
           ul
             li
               label(for='formGroupExampleInput2') Nhiệt độ thời tiết Đất nước bạn muốn tìm là?
             li
               input.form-control#formGroupExampleInput2(type='text' placeholder='Tên thành phố')
             li
-              a(href='/') Tìm kiếm
+              button(type="submit") Tìm kiếm
+
+              
+    
