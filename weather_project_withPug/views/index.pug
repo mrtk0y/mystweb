@@ -1,17 +1,17 @@
 extends layout.pug
 block content  
   section#content
-    div.d-flex 
-      div.col-6 
+    div.navbar
+      div
         a.active(href='#') Home
       div
         form(action="/")
-          ul.d-flex
-            li  
+          ul.d-flex.justify-content-end.flex-wrap
+            li.formLi  
               input(type="text" placeholder="Username" name="username")
-            li
+            li.formLi
               input(type="text" placeholder="Password" name="psw")
-            li
+            li.formLi
               button(type="submit") Login
   
     div#formSearch
@@ -21,7 +21,7 @@ block content
             li
               label(for='formGroupExampleInput2') Nhiệt độ thời tiết Đất nước bạn muốn tìm là?
             li
-              input.form-control#formGroupExampleInput2(type='text' placeholder='Tên thành phố')
+              input.form-control#formInputWeather(type='text' placeholder='Tên thành phố')
             li
               button(type="submit") Tìm kiếm
 
