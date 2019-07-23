@@ -1,12 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-// const cookieParser =  require('cookie-parser');
+const cookieParser = require('cookie-parser');
 const path=require('path');
 const app = express();
 
 app.use(express.static(path.join(__dirname,"views")));
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(cookieParser());
+app.use(cookieParser());
 app.set('view engine', 'pug');
 
 app.get('/', (request, response) => {
