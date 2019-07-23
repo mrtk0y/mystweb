@@ -5,7 +5,7 @@ block content
       div
         a.active(href='#') Home
       div
-        form(action="/")
+        form(action="/users" method='post')
           ul.d-flex.justify-content-end.flex-wrap
             li.formLi  
               input(type="text" placeholder="Username" name="username")
@@ -16,7 +16,7 @@ block content
   
     div#formSearch
       img#magnifying(src='https://imageog.flaticon.com/icons/png/512/49/49116.png' alt='magnifying')
-      form.form-group.text-center
+      form.form-group.text-center(action="/" method='post')
           ul
             li
               label(for='formGroupExampleInput2') Nhiệt độ thời tiết Đất nước bạn muốn tìm là?
@@ -25,5 +25,9 @@ block content
             li
               button(type="submit") Tìm kiếm
 
+    form(action='/user', method='post')
+      label Hello 
+        input(type='text', name='users')
+        button(type='submit') Submit 
               
     

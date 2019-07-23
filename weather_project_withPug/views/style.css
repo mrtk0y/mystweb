@@ -25,7 +25,7 @@ a:hover {
     margin-top: 5em;
 }
 .form-control {
-    width: 70%;
+    width: 60%;
     margin: auto;
 }
 ul {
@@ -43,7 +43,7 @@ input {
     margin: auto;
     padding: 5px 0;
     text-align: center;
-    width: 60%;
+    width: 100%;
     border-radius: 4px;
     border: 1px solid #D5DDE4;
     color: #2C3238;
@@ -53,6 +53,7 @@ button {
     background: #5FB6E1;
     color: #fff;
 }
+
 #error {
     width: 100%;
     padding: 22px 0;
