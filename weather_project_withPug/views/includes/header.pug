@@ -1,2 +1,22 @@
-footer
-  p This Is Footer
+//- div.navbar
+//-   div
+//-     a.active(href="#") Home
+//-   div
+//-     form(action="/user" method="post")
+//-       ul.d-flex.justify-content-end.flex-wrap
+//-         li.formLi  
+//-           input(type="text" placeholder="Username" name="username")
+//-         li.formLi
+//-           input(type="text" placeholder="Password" name="psw")
+//-         li.formLi
+//-           button.btn.btn-primary(type="submit") Login
+
+
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  a.navbar-brand.text-uppercase(href="#")
+    | HOME
+  button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarSupportedContent")
+    span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    a.btn.btn-primary.my-2.my-sm-0.ml-auto(href="/login")
+      | Login

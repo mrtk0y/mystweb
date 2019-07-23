@@ -1,33 +1,22 @@
 extends layout.pug
+
 block content  
   section#content
-    div.navbar
-      div
-        a.active(href='#') Home
-      div
-        form(action="/user" method='post')
-          ul.d-flex.justify-content-end.flex-wrap
-            li.formLi  
-              input(type="text" placeholder="Username" name="username")
-            li.formLi
-              input(type="text" placeholder="Password" name="psw")
-            li.formLi
-              button(type="submit") Login
-  
-    div#formSearch
-      img#magnifying(src='https://imageog.flaticon.com/icons/png/512/49/49116.png' alt='magnifying')
-      form.form-group.text-center(action="/weather" method='post')
-          ul
-            li
-              label(for='formGroupExampleInput2') Nhiệt độ thời tiết Đất nước bạn muốn tìm là?
-            li
-              input.form-control#formInputWeather(type='text' placeholder='Tên thành phố')
-            li
-              button(type="submit") Tìm kiếm
+    .d-flex.justify-content-center.my-3
+      img.w-25(src="https://imageog.flaticon.com/icons/png/512/49/49116.png" alt="magnifying")
 
-    //- form(action='/weather', method='post')
+    form.form-group.text-center(action="/weather" method="post")
+      label.my-3(for="formInputWeather")
+        | Nhiệt độ thời tiết Đất nước bạn muốn tìm là?
+
+      input#formInputWeather.form-control.w-50.text-center.my-3.mx-auto(type="text" placeholder="Tên thành phố")
+
+      button.btn.btn-primary.my-3(type="submit")
+        | Tìm kiếm
+
+    //- form(action="/weather", method="post")
     //-   label Hello 
-    //-     input(type='text', name='users')
-    //-     button(type='submit') Submit 
+    //-     input(type="text", name="users")
+    //-     button(type="submit") Submit 
               
     

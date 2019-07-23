@@ -24,7 +24,10 @@ app.get('/user', (request, response) => {
 app.post('/user', (request, response) => {
   response.cookie('username', request.body.username);
   response.render('user',{ name: request.body.username });
-  
+})
+
+app.get('/login', (request, response) => {
+  response.render('login')
 })
 
 app.listen(3000, ()=> {

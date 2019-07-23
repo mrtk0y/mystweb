@@ -1,0 +1,19 @@
+extends layout.pug
+
+block content
+  form.w-50.mx-auto
+    .form-group
+      label(for="email")
+        | Email
+      input#email.form-control(type="email" placeholder="Email")
+    .form-group
+      label(for="password")
+        | Password
+      input#password.form-control(type="password" placeholder="Password")
+    .form-group.form-check
+      input#remember-me.form-check-input(type="checkbox")
+      label.form-check-label(for="remember-me")
+        | Remember me
+    .d-flex.justify-content-center
+      button.btn.btn-primary(type="submit")
+        | Submit
