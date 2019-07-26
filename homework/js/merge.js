@@ -4,5 +4,4 @@ function merge(content, values) {
     return content;
   }
   
-  
   module.exports.merge = merge;

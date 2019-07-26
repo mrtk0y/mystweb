@@ -14,14 +14,18 @@ app.get('/', (request, response) => {
   response.render('index');
 });
 
-app.get('/weather',(request, response) => {
-  response.render('weather');
-});
+// app.get('/weather',(request, response) => {
+//   response.render('weather');
+// });
 
 app.post('/weather', (request, response) => {
-  response.render('weather');
+  // const city = {
+  //   cityName: request.body.city
+  // }; //k can thiet nua vi co 1 input
+  response.render('weather', {city: request.body.city});
+  console.dir(request.body);
   // const city = process.argv.slice(2);
-  // city.forEach(weather.getTemp);
+  // city(weather.getTemp);
 });
 
 app.get('/user', (request, response) => {

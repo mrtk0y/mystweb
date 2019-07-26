@@ -1,8 +1,11 @@
 const https = require('https');
 const http = require('http');
 
-function printMessage(city, temp) {
-    const message = `The temp of ${city} is ${temp} F`;
+function printMessage(city, temp,humidity, wind, timezone) {
+    const message = `Thông tin thời tiết của thành phố ${city} là 
+    Nhiệt độ ${temp} C
+    Độ ẩm ${humidity} % 
+    Tốc độ gió là ${wind} m/s`;
     console.log(message);
 }
 
@@ -26,17 +29,16 @@ function getTemp (city) {
                 });
                 //Parse data
                 response.on('end', () => {
-                    const weather = JSON.parse(body);
+                    const weather = JSON.parse(body);           
                     try {
-                        printMessage(city, getCelsius(weather.main.temp));
+                        printMessage(city, getCelsius(weather.main.temp), weather.main.humidity, weather.wind.speed, weather.timezone);
                         // console.log(weather);
-
                     } catch (error) {
                         printError(error);
                     }
                 });
             } else {
-                const message =`There was an error getting the Temp for ${city} (${http.STATUS_CODES[response.statusCode]}) `;
+                const message =`Có vấn đề khi tìm kiếm thông tin thời tiết của thành phố ${city} (${http.STATUS_CODES[response.statusCode]}) `;
                 const statusCodeError = new Error (message);
                 printError(statusCodeError);
             };
@@ -47,7 +49,7 @@ function getTemp (city) {
     }
 }
 
-const city = process.argv.slice(2);
-getTemp(city);
+//  const city = process.argv.slice(2);
+//  city.forEach(getTemp);
 
-// module.exports.getTemp = getTemp;
+module.exports.getTemp = getTemp;

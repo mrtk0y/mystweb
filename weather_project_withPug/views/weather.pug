@@ -4,6 +4,11 @@ block content
     .card-body
       h5.card-title Chào bạn
       p.card-text
-        | Thông số truyền vào đây ạ 
-      a.btn.btn-primary(href='#') Tìm Thành phố khác
+        //- | Thông số truyền vào đây ạ 
+        ul
+          li
+            | Thành phố #{city} 
+          li
+            | Nhiệt độ thành phố là #{temp} C
+    a.btn.btn-primary(href='/') Tìm Thành phố khác
       
