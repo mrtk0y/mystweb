@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const path=require('path');
 const weather = require('./weather.js');
+const merge = require("./merge.js");
 const app = express();
 
 app.use(express.static(path.join(__dirname,"views")));
@@ -24,8 +25,7 @@ app.post('/weather', (request, response) => {
   // }; //k can thiet nua vi co 1 input
   response.render('weather', {city: request.body.city});
   console.dir(request.body);
-  // const city = process.argv.slice(2);
-  // city(weather.getTemp);
+  
 });
 
 app.get('/user', (request, response) => {
