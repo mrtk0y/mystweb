@@ -26,6 +26,7 @@ function getTemp (city) {
                 //Read data
                 response.on('data', data1 => {
                     body += data1.toString();
+                    console.log(body);
                 });
                 //Parse data
                 response.on('end', () => {
@@ -35,15 +36,15 @@ function getTemp (city) {
                     const windSpeed = weather.wind.speed; 
                     const timezone = weather.timezone;
                     const values = {
+                        temp, humidity, windSpeed, timezone
                     };
-                      console.log(values);
-                    // console.log(body);         
-                    // try {
-                    //     printMessage(city, getCelsius(weather.main.temp), weather.main.humidity, weather.wind.speed, weather.timezone);
-                    //     // console.log(weather);
-                    // } catch (error) {
-                    //     printError(error);
-                    // }
+                               
+                    try {
+                        printMessage(city, getCelsius(temp),humidity,windSpeed,timezone);
+                        // console.log(weather);
+                    } catch (error) {
+                        printError(error);
+                    }
                 });
             } else {
                 const message =`Có vấn đề khi tìm kiếm thông tin thời tiết của thành phố ${city} (${http.STATUS_CODES[response.statusCode]}) `;
@@ -57,7 +58,7 @@ function getTemp (city) {
     }
 }
 
- const city = process.argv.slice(2);
- city.forEach(getTemp);
+//  const city = process.argv.slice(2);
+//  city.forEach(getTemp);
 
 module.exports.getTemp = getTemp;

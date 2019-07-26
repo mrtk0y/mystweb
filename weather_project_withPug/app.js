@@ -20,12 +20,11 @@ app.get('/', (request, response) => {
 // });
 
 app.post('/weather', (request, response) => {
-  // const city = {
-  //   cityName: request.body.city
-  // }; //k can thiet nua vi co 1 input
-  response.render('weather', {city: request.body.city});
-  console.dir(request.body);
-  
+  const city = {
+    cityName: request.body.city
+  }; 
+  response.render('weather', {city: city.cityName});
+  weather.getTemp(city);
 });
 
 app.get('/user', (request, response) => {
@@ -40,7 +39,6 @@ app.post('/user', (request, response) => {
 app.get('/login', (request, response) => {
   response.render('login')
 });
-
 
 app.listen(3000 , ()=> {
   console.log('Sever is running now at port 3000');
