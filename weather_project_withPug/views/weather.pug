@@ -1,17 +1,16 @@
 extends layout.pug
-block content  
+block content
   .card
     .card-body
       h5.card-title Chào bạn
       p.card-text
-        //- | Thông số truyền vào đây ạ 
+        //- | Thông số truyền vào đây ạ
         ul
           li
-            | Thành phố #{city} 
+            | Thành phố #{city}
           li
             | Nhiệt độ thành phố là #{temp} C
             |#{humidity}
-            |#{windSpeed} 
+            |#{windSpeed}
             |#{timezone}
     a.btn.btn-primary(href='/') Tìm Thành phố khác
-      
