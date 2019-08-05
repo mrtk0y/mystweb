@@ -1,5 +1,4 @@
 extends layout.pug
-
 block content  
   section#content
     .d-flex.justify-content-center.my-3
@@ -7,7 +6,7 @@ block content
 
     form.form-group.text-center(action="/weather" method="post")
       label.my-3(for="formInputWeather")
-        | Nhiệt độ thời tiết Đất nước bạn muốn tìm là?
+        | Thời tiết Đất nước bạn muốn tìm là?
 
       input#formInputWeather.form-control.w-50.text-center.my-3.mx-auto(type="text" name="city" placeholder="Tên thành phố" )
 

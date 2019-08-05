@@ -3,14 +3,11 @@ block content
   .card
     .card-body
       h5.card-title Chào bạn
-      p.card-text
-        //- | Thông số truyền vào đây ạ
+      .card-text
+        p
+        | Thành phố #{city}
         ul
-          li
-            | Thành phố #{city}
-          li
-            | Nhiệt độ thành phố là #{temp} C
-            |#{humidity}
-            |#{windSpeed}
-            |#{timezone}
+          li Nhiệt độ thành phố là #{temp} C 
+          li Độ ẩm là  #{humidity}%
+          li Tốc độ gió là #{windSpeed} m/s
     a.btn.btn-primary(href='/') Tìm Thành phố khác
