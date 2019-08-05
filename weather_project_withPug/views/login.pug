@@ -1,7 +1,7 @@
 extends layout.pug
 
 block content
-  form.w-50.mx-auto
+  form.w-50.mx-auto(action="/user" method="post")
     .form-group
       label(for="email")
         | Email

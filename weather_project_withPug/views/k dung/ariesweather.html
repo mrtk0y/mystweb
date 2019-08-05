@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Aeris JavaScript SDK - Basic Interactive Map</title>
+    <script defer src="https://cdn.aerisapi.com/sdk/js/latest/aerisweather.min.js"></script>
+    <style>
+ 	   #map {
+			height: 500px;
+        	margin: 30px auto;
+        	width: 500px;
+    	}
+    </style>
+</head>
+<body>
+<div id="map">
+<script>
+    window.onload = () => {
+        const aeris = new AerisWeather('fOjQxkH53q0NU5795jqMJ', 'iYhlXwTxc0CaoxeEQkHFlf5cnYRacIBn7UvoW9j0');
+        aeris.views().then(views => {
+            const map = new views.InteractiveMap(document.getElementById('map'), {
+                center: {
+                    lat: 16.2569,
+                    lon: 104.0186
+                },
+                zoom: 5,
+                layers: 'flat,satellite-geocolor,radar,temperatures,admin,counties'
+            });
+        });
+    };
+</script>
+</div>
+</body>
+</html>
