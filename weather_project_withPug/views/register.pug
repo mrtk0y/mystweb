@@ -1,19 +1,23 @@
-extends layout.pug
+extends layout
 
 block content
-  form.w-50.mx-auto(action="/user" method="post")
-    .form-group
-      label(for="email")
-        | Email
-      input#email.form-control(type="email" placeholder="Email")
-    .form-group
-      label(for="password")
-        | Password
-      input#password.form-control(type="password" placeholder="Password")
-    .form-group.form-check
-      input#remember-me.form-check-input(type="checkbox")
-      label.form-check-label(for="remember-me")
-        | Remember me
-    .d-flex.justify-content-center
-      button.btn.btn-primary(type="submit")
-        | Submit
+  .main.container
+    //- .col-md-6.col
+    h1.display-4.m-b-2 Đăng kí
+    
+    // register form
+    form(method='POST' action='/register')
+      div.form-group
+        label(for='name') Tên:
+        input#name.form-control(type='text', placeholder='first and last' name='name')
+      div.form-group
+        label(for='email') Email:
+        input#email.form-control(type='email', placeholder='name@email.com' name='email')
+      div.form-group
+        label(for='pw') Password:
+        input#pw.form-control(type='password' name='password')
+      div.form-group
+        label(for='pw2') Xác nhận Password:
+        input#pw2.form-control(type='password' name='confirmPassword')
+      button.btn.btn-primary(type='submit') Đăng kí
+

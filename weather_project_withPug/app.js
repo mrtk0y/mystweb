@@ -20,12 +20,12 @@ app.set("view engine", "pug");
 
 const mainRoutes = require("./routes");
 const weatherRoutes = require("./routes/weather");
-const autheticationRoutes = require("./routes/authentication");
+const registerRoutes = require("./routes/register");
 const userRoutes = require("./routes/users");
 
 app.use(mainRoutes);
 app.use("/weather", weatherRoutes);
-app.use("/login", autheticationRoutes);
+app.use("/register", registerRoutes);
 app.use("/user", userRoutes);
 
 app.listen(3000, () => {

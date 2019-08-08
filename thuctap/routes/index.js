@@ -3,15 +3,80 @@ const router = express.Router();
 const User = require('../models/user');
 const mid = require('../middleware');
 
+// GET /logout
+router.get('/logout', function(request, response, next) {
+  if (request.session) {
+    // delete session object
+    request.session.destroy(function(err) {
+      if(err) {
+        return next(err);
+      } else {
+        return response.redirect('/');
+      }
+    });
+  }
+});
+
+// // GET /profile
+// router.get('/profle', ((request, response, next) => {
+//   if (! request.session.userID){
+//     const err = new Error('Đăng nhập để vào trang này');
+//     err.status= 403;
+//     return next(err);
+//   }
+//   User.findById(request.session.userID)
+//     .exec((error,user)=> {
+//       if(error){
+//         return next(error);
+//       } else {
+//         return response.render('profile',{title: 'Trang cá nhân', name: username});
+//       }
+//     });
+// }));
 
 // GET Login
 router.get('/login', (request, response, next) => {
-  return response.render('login', { title: 'Log In'});
+  return response.render('login', { title: 'Đăng nhập'});
 });
+
 // POST login
-router.post('/login', (request,response, next) => {
-  response.send('success');
+router.post('/login', function(request, response, next) {
+  if (request.body.email && request.body.password) {
+    User.authenticate(request.body.email, request.body.password, function (error, user) {
+      if (error || !user) {
+        var err = new Error('Sai email - mật khẩu.');
+        err.status = 401;
+        return next(err);
+      }  else {
+        request.session.userId = user._id;
+        return response.redirect('/profile');
+      }
+    });
+  } else {
+    var err = new Error('Điền email + mật khẩu');
+    err.status = 401;
+    return next(err);
+  }
 });
+
+// // POST login
+// router.post('/login', (request,response, next) => {
+//   if (request.body.email && request.body.password){
+//     User.authenticate(request.body.email, request.body.passward, (error,user)=>{
+//       if(error || !user){
+//         const err = new Error('k timf thay tai khoan -Sai Email - Mật khẩu');
+//         err.status = 401;
+//         return next(err);
+//       }
+//     })
+//   } else {
+//     request.session.userID = user._id;
+//     return response('/profile');
+//     // const err = new Error('Yêu cầu điền cả email + mật khẩu')
+//     // err.status = 401;
+//     // return next(err);
+//   }
+// });
 
 // GET /
 router.get('/', (request, response, next) => {
@@ -20,7 +85,7 @@ router.get('/', (request, response, next) => {
 
 // GET Register
 router.get('/register',(request, response, next) => {
-  return response.render('register');
+  return response.render('register',{ title: 'Đăng kí'});
 });
 // POST REGISTER
 router.post('/register', (request, response, next) => {
@@ -31,7 +96,7 @@ router.post('/register', (request, response, next) => {
 
       // confirm that user typed same password twice
       if (request.body.password !== request.body.confirmPassword) {
-        var err = new Error('Passwords do not match.');
+        var err = new Error('Mật khẩu k đúng.');
         err.status = 400;
         return next(err);
       }
@@ -69,6 +134,18 @@ router.get('/about', (request, response, next) => {
 // GET /contact
 router.get('/contact', (request, response, next) => {
   return response.render('contact',{ title: 'Contact'});
+});
+
+// GET /profile
+router.get('/profile', mid.requiresLogin, function(request, response, next) {
+  User.findById(request.session.userId)
+      .exec(function (error, user) {
+        if (error) {
+          return next(error);
+        } else {
+          return response.render('profile', { title: 'Trang cá nhân', name: user.name });
+        }
+      });
 });
 
 module.exports = router;

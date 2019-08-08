@@ -1,0 +1,22 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  //- button.navbar-toggler.hidden-md-up.pull-xs-right(type='button', data-toggle='collapse', data-target='#navbar')
+  //-   #navbar.navbar-nav.collapse
+  .container
+    a.navbar-brand.text-uppercase(href="/")
+      | HOME
+
+    .d-flex.flex-wrap
+      if !currentUser
+        a.nav-item.nav-link(href='register') Đăng kí
+      a.nav-item.nav-link(href='about') Chúng tôi
+      a.nav-item.nav-link(href='contact') Liện hệ
+      a.nav-item.nav-link(href='profile') Trang cá nhân
+        
+    if currentUser
+      div
+        img.avatar.img-circle.hidden-xs-down(src='avatar.svg', alt='avatar')
+      a.btn.btn-light.pull-md-right(href='/logout') Thoát
+    else  
+      a.btn.btn-info.pull-md-right(href='login') Đăng nhập
+    
+
