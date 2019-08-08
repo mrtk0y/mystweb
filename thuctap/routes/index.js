@@ -1,7 +1,19 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
-const mid = require('../middleware');
+const mid = require('../middleware/index.js');
+
+// GET /profile
+router.get('/profile', mid.requiresLogin, function(request, response, next) {
+  User.findById(request.session.userId)
+      .exec(function (error, user) {
+        if (error) {
+          return next(error);
+        } else {
+          return response.render('profile', { title: 'Trang cá nhân', name: user.name });
+        }
+      });
+});
 
 // GET /logout
 router.get('/logout', function(request, response, next) {
@@ -35,8 +47,8 @@ router.get('/logout', function(request, response, next) {
 // }));
 
 // GET Login
-router.get('/login', (request, response, next) => {
-  return response.render('login', { title: 'Đăng nhập'});
+router.get('/login', mid.loggedOut, function(req, res, next) {
+  return res.render('login', { title: 'Log In'});
 });
 
 // POST login
@@ -78,11 +90,6 @@ router.post('/login', function(request, response, next) {
 //   }
 // });
 
-// GET /
-router.get('/', (request, response, next) => {
-  return response.render('index',{ title: 'Home'});
-});
-
 // GET Register
 router.get('/register',(request, response, next) => {
   return response.render('register',{ title: 'Đăng kí'});
@@ -101,7 +108,7 @@ router.post('/register', (request, response, next) => {
         return next(err);
       }
 
-      // create object with form input
+      // tạo đổi tượng với form input
       var userData = {
         email: request.body.email,
         name: request.body.name,
@@ -109,7 +116,7 @@ router.post('/register', (request, response, next) => {
         password: request.body.password
       };
 
-      // use schema's `create` method to insert document into Mongo
+      // Dùng chức năng create của scheme để điền vào mongo
       User.create(userData, function (error, user) {
         if (error) {
           return next(error);
@@ -126,6 +133,11 @@ router.post('/register', (request, response, next) => {
     }
 });
 
+// GET /
+router.get('/', (request, response, next) => {
+  return response.render('index',{ title: 'Home'});
+});
+
 // GET /about
 router.get('/about', (request, response, next) => {
   return response.render('about',{ title: 'About'});
@@ -134,18 +146,6 @@ router.get('/about', (request, response, next) => {
 // GET /contact
 router.get('/contact', (request, response, next) => {
   return response.render('contact',{ title: 'Contact'});
-});
-
-// GET /profile
-router.get('/profile', mid.requiresLogin, function(request, response, next) {
-  User.findById(request.session.userId)
-      .exec(function (error, user) {
-        if (error) {
-          return next(error);
-        } else {
-          return response.render('profile', { title: 'Trang cá nhân', name: user.name });
-        }
-      });
 });
 
 module.exports = router;

@@ -1,5 +1,4 @@
 const express = require('express');         // da cai
-const bodyParser = require('body-parser');
 const mongoose = require('mongoose');       // da cai
 const session = require('express-session'); // da cai 
 const MongoStore = require('connect-mongo')(session);
@@ -18,19 +17,19 @@ app.use(session({
   store: new MongoStore({
     mongooseConnection: db
   })
-}))
+}));
 
 //  Làm user ID thành 1 templates
-app.use((request,response, next)=>{
+app.use( function (request,response, next){
   response.locals.currentUser= request.session.userID;
   next();
-})
+});
+
+// Parse data
+app.use(express.urlencoded({ extended: false }));
 
 // serve static files from /public
 app.use(express.static(__dirname + '/public'));
-
-// Parse data
-app.use(express.urlencoded({ extended: true }));
 
 // view engine setup
 app.set('view engine', 'pug');
@@ -39,13 +38,9 @@ app.set('views', __dirname + '/views');
 // Route
 const mainRoutes = require('./routes');
 const weatherRoutes = require('./routes/weather.js');
-// const registerRoutes = require('./routes/register.js');
-// const userRoutes = require('./routes/users');
 
 app.use(mainRoutes);
 app.use('/weather', weatherRoutes);
-// app.use('/register', registerRoutes);
-// app.use('/user', userRoutes);
 
 // bắt sự kiện lỗi 404 và chuyển cho error handler
 app.use(function(request, response, next) {

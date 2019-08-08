@@ -92,7 +92,7 @@ a:hover {
 .avatar {
 	border: solid 2px rgba(255,255,255, .75);
 }
-/* .options {
+.options {
 	display: none;
 }
 .list-group-item:hover .options {
@@ -106,7 +106,7 @@ a:hover {
 }
 .options .material-icons:hover {
 	color: initial;
-} */
+}
 
 /* Media Queries */
 
