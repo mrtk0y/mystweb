@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const weather = require('../weather.js');
-// router.get('/weather',(request, response) => {
-//   response.render('weather');
-// });
+// const weather = require('../weather.js');
+const weather = require('../weather2.js');
 
 router.post('/', async (request, response) => {
   try {

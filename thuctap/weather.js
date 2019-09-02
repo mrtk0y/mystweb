@@ -25,7 +25,7 @@ function getTemp(city) {
 
             response.on("data", data1 => {
               body += data1.toString();
-              console.log(body);
+              // console.log(body);
             });
             response.on("end", () => {
               const weather = JSON.parse(body);
@@ -70,5 +70,4 @@ function getTemp(city) {
       });
   });
 }
-
 module.exports.getTemp = getTemp;
