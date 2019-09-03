@@ -1,13 +1,14 @@
 const https = require("https");
 const http = require("http");
 
-function printMessage(city, temp, humidity, wind) {
-  const message = `Thông tin thời tiết của thành phố ${city} là
-    Nhiệt độ ${temp} C
-    Độ ẩm ${humidity} %
-    Tốc độ gió là ${wind} m/s`;
-  // console.log(message);
-}
+// function printMessage(city, temp, humidity, wind) {
+//   const message = `Thông tin thời tiết của thành phố ${city} là
+//     Nhiệt độ ${temp} C
+//     Độ ẩm ${humidity} %
+//     Tốc độ gió là ${wind} m/s
+//     đây là weather module`;
+//   // console.log(message);
+// }
 
 function getCelsius(kelvin) {
   const celsius = kelvin - 273;
@@ -37,13 +38,13 @@ function getTemp(city) {
               };
 
               try {
-                printMessage(
-                  city,
-                  values.temp,
-                  values.humidity,
-                  values.windSpeed,
-                  values.timezone
-                );
+                // printMessage(
+                //   city,
+                //   values.temp,
+                //   values.humidity,
+                //   values.windSpeed,
+                //   values.timezone
+                // );
                 informations = {
                   city: city,
                   temp: values.temp,
